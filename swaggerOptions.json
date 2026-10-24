@@ -1,0 +1,51 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "cf.sites",
+      "version": "1.0.0",
+      "description": "Documentación del backend",
+      "contact": {
+        "name": "Jhonatan Calderón Leiva",
+        "email": "info@jotace.cl"
+      },
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://172.27.16.1:2299",
+        "description": "Servidor local"
+      }
+    ],
+    "tags": [
+      {
+        "name": "Default",
+        "description": "Servicios genericos"
+      },
+      {
+        "name": "Sitemap",
+        "description": "Mapa del Sitio XML"
+      },
+      {
+        "name": "Views",
+        "description": "Vistas del sistema"
+      },
+      {
+        "name": "Form Contact",
+        "description": "Servicio de Formulario de Contacto"
+      },
+      {
+        "name": "Registro de Click",
+        "description": "Servicio para registro de clicks"
+      },
+      {
+        "name": "Registro de Formularios",
+        "description": "Servicio para registrar formularios"
+      }
+    ]
+  },
+  "apis": ["./backend/*.js"]
+}
