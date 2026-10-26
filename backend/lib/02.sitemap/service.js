@@ -30,8 +30,14 @@ module.exports = {
         throw new Error(constants.error.rest.sitemap_no_directory);
       }
 
-      let archivos = fs.readdirSync(pathDomain, 'utf8').filter((row) => {
-        return fs.statSync(path.join(pathDomain, row)).isFile() && row.indexOf('.html') > -1;
+      const fileOmmited = ['index.html', 'message.html'];
+
+      const archivos = fs.readdirSync(pathDomain, 'utf8').filter((row) => {
+        return (
+          !fileOmmited.includes(row) &&
+          row.endsWith('.html') &&
+          fs.statSync(path.join(pathDomain, row)).isFile()
+        );
       });
 
       const xmls = await Promise.all(
